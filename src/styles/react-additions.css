@@ -1,0 +1,16 @@
+/* Only things the original got from jQuery/Bootstrap JS or fonts we do not have. */
+.carousel-inner > .item { display: none; position: relative; }
+.carousel-inner > .item.active { display: block; }
+.carousel-control { background-image: none; }
+.carousel-control .cc-icon { position: absolute; top: 50%; left: 50%; margin: -12px 0 0 -12px; }
+.modal.in { display: block; background: rgba(0,0,0,.5); overflow-y: auto; }
+.bhashini-dropdown { position: relative; }
+.bhashini-dropdown-btn { background: transparent; border: 0; padding: 0; cursor: pointer; }
+.bhashini-dropdown-content { position: absolute; right: 0; z-index: 1000; list-style: none; margin: 4px 0 0; padding: 4px 0; background: #fff; color: #222; border: 1px solid #ccc; border-radius: 4px; max-height: 260px; overflow-y: auto; min-width: 190px; text-align: left; }
+.bhashini-dropdown-content li { padding: 4px 12px; cursor: pointer; }
+.bhashini-dropdown-content li:hover, .bhashini-dropdown-content li[aria-selected="true"] { background: #e8f4fd; }
+.state-selectionpage select { width: 100%; }
+.demo-note { text-align: center; color: #081e5b; margin-top: 12px; font-size: 14px; }
+.ministry_nic_logo img { max-width: 100%; }
+.marquee-track { display: inline-block; white-space: nowrap; padding-left: 100%; animation: marquee-scroll 30s linear infinite; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-100%); } }

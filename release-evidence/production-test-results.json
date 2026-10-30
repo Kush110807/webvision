@@ -1,0 +1,158 @@
+[
+  {
+    "test": "route /",
+    "result": "PASS"
+  },
+  {
+    "test": "route /delhi",
+    "result": "PASS"
+  },
+  {
+    "test": "route /journey",
+    "result": "PASS"
+  },
+  {
+    "test": "route /status",
+    "result": "PASS"
+  },
+  {
+    "test": "route /state-selection",
+    "result": "PASS"
+  },
+  {
+    "test": "route /original",
+    "result": "PASS"
+  },
+  {
+    "test": "route /services/driving-licence",
+    "result": "PASS"
+  },
+  {
+    "test": "route /services/licence-renewal",
+    "result": "PASS"
+  },
+  {
+    "test": "route /services/unknown",
+    "result": "PASS"
+  },
+  {
+    "test": "route /missing",
+    "result": "PASS"
+  },
+  {
+    "test": "state empty/no results/Enter/clear/arrows/non-Delhi routing",
+    "result": "PASS"
+  },
+  {
+    "test": "mobile menu Escape focus and navigation close",
+    "result": "PASS"
+  },
+  {
+    "test": "journey six steps validation, Back/Next, reload/resume, restart",
+    "result": "PASS"
+  },
+  {
+    "test": "status three samples, stale result, empty/invalid/unknown lookup",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 320 /",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 320 /delhi",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 320 /journey",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 320 /status",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 320 /state-selection",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 320 /services/driving-licence",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 375 /",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 375 /delhi",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 375 /journey",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 375 /status",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 375 /state-selection",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 375 /services/driving-licence",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 768 /",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 768 /delhi",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 768 /journey",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 768 /status",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 768 /state-selection",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 768 /services/driving-licence",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 1440 /",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 1440 /delhi",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 1440 /journey",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 1440 /status",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 1440 /state-selection",
+    "result": "PASS"
+  },
+  {
+    "test": "responsive 1440 /services/driving-licence",
+    "result": "PASS"
+  },
+  {
+    "test": "browser runtime errors",
+    "result": "PASS"
+  }
+]

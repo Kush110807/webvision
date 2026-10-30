@@ -1,0 +1,14 @@
+[
+  {
+    "test": "original popup close and return home",
+    "result": "PASS"
+  },
+  {
+    "test": "state-selection required validation and Delhi journey navigation",
+    "result": "PASS"
+  },
+  {
+    "test": "invalid saved step/state/service/fields and corrupt JSON recovery",
+    "result": "PASS"
+  }
+]

@@ -1,0 +1,502 @@
+/* Inline <style> blocks copied from the saved page, in original order. */
+
+.sarathinew_logo
+{
+width: 100px;
+height: 100px;
+margin-top: -10px;
+}
+.sarathi_parivahantxt
+{
+text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    line-height: 25px;
+    font-size: 18px;
+    font-family: auto;
+    padding: 17px 0px 0px 0px;
+    margin-left: -32px;
+}
+.ministryofroad_text p
+{
+    color: #ffffff;
+    margin: 0px 0px 0px 0px !important;
+    line-height: 23px;
+    font-family: auto;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+.ministryofroad_text
+{
+    margin: 10px 0px 0px -15px !important;
+}
+.india_new_emblem img
+{
+width: 66px;
+height: 85px;
+}
+img
+{
+max-width: none !important;
+}
+/*-------------------*/
+.sarathiheader_page
+{
+background:#1CA6EF; 
+clear:both; 
+padding:5px 0px;
+color:ffffff !important;
+}
+.sarathiheader_page .logo-main > img
+{
+padding: 0 0 0 5%;
+}
+.sarathiheader_page .login_page > li
+{
+margin: 0 0 0 28%;
+}
+
+.font3 {
+	text-shadow: 0px 4px 3px rgba(49, 48, 48, 0.4), 0px 8px 13px rgba(193, 183, 183, 0.1), 0px 18px 23px rgb(234, 226, 226);
+	color: #3081c5;
+	font-weight: bold;
+	text-align: center;
+	font-family: Trebuchet MS;
+	padding-right: 10% !important;
+}
+.input-sm, .form-group-sm .form-control {
+    height: 34px;
+    border: 2px solid #ffffff;
+    background: #ecedee;
+    border-radius: 21px;    
+}
+
+.carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -58px !important;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -58px !important;
+}
+.header-date
+{
+    color:#1c8fd1;
+}
+.col-md-offset-1 {
+    margin-left: 6.333333%;
+}
+.red
+{
+	color:#ffffff !important;
+}
+
+@media screen and (max-width: 550px) {
+	.font3size {font-size:1.2em;}
+	
+.header {
+   
+    background: #15a7ef !important;
+}
+.sarathiheader_page .logo-main > img
+{
+padding: 0 0 0 0%;
+}
+}
+@media (min-width: 551px) and (max-width: 991px) {
+	.font3size {font-size:1.3em;}
+	.navbar-inverse .navbar-nav > li > a {
+    color: #081e5b !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+.sarathiheader_page .logo-main > img
+{
+padding: 0 0 0 0%;
+}
+.nav > li > a {
+    padding: 6px;
+}	
+.header {
+    
+    background: #15a7ef !important;
+}
+.form-control {
+    margin:  0 0 8px !important;
+}
+}
+@media screen and (max-width: 768px) 
+{
+.sarathinew_logo
+{
+margin-top: -0px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.font3size {font-size:1.3em;}
+}
+@media screen and (min-width: 1200px) {
+	.font3size {font-size:1.3em;}
+}
+
+
+/*  */
+.theme-logo .theme-logo-upper {
+    background: url(../../../content/dam/gtwenty/theme_logo/theme-logo-bg.jpg);
+    background-color: #fcefdf;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 0;
+    max-width: 100%;
+    /* min-height: 25pc; */
+    height: 432px;
+    clear: both;
+    overflow: hidden;
+}
+.theme-logo .theme-logo-image {
+    height: 260px;
+    margin: 61pt 75pt 60pt 200px;
+    width: 300px;
+}
+.theme-logo .theme-logo-vid {
+    height: auto;
+    margin: 61pt 75pt 60pt 20px;
+    max-width: 100%;
+    width: 500px;
+    width: 520px;
+}
+/*  */
+
+
+#cssmenu ul ul li:last-child a {
+	border-bottom: 1px solid #32373e
+}
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: red;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.online-serv
+{
+	
+    clear: both;
+    display: block;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom:-19px;
+}
+.online-serv h4
+{
+    color: #081e5b;
+    letter-spacing: 0.5px;
+    font-family: none;
+    font-size: 18px; 
+    font-weight: 100;
+   
+}
+.navbar {
+    display: none;
+}
+.header{padding:0px;}
+
+@media only screen and (max-width: 600px) {
+
+.online-serv h4
+{  
+    letter-spacing: 0px;
+    font-size: 18px;   
+}
+}
+
+
+    #updatemobileno .modal-header {
+        padding: 5px;
+        display: block;
+        text-align: right !important;
+    }
+
+    #updatemobileno .modal-body img.img-fluid {
+        width: 100%;
+        border-radius: 10px 0 10px 10px
+    }
+
+
+.select2 {
+    width: 300px !important;
+}
+.modal-header {
+    min-height: 41.43px !important;
+
+}
+.state-selectionpage
+{
+max-width:300px;
+margin:auto;
+display:block;
+}
+.select2-container .select2-selection--single 
+{
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 35px;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #505050;
+    border-radius: 7px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color:  #081e5b;
+    line-height: 35px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #888 transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    height: 0;
+    left: 50%;
+    margin-left: -13px;
+    margin-top: 3px;
+    position: absolute;
+    top: 50%;
+    width: 0;
+}
+
+@media only screen and (max-width: 600px) {
+
+
+}
+@media only screen and (min-width: 600px) {
+
+
+}
+@media only screen and (min-width: 992px) {
+
+
+}
+@media only screen and (min-width: 1200px) {
+
+
+}
+
+
+
+		.qr-code-img {
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+}
+        #updatemobileno table {
+            width: 100%;
+/* NOTE: original page had a typo here ("transparent:" instead of "transparent;"); fixed so the CSS parses. */
+            border: 0px solid transparent;
+        }
+        #updatemobileno table td {
+            width: 50%;
+            text-align: center;
+        }
+
+        #updatemobileno .link-button {
+            width: 90%;
+            background: #1e4989;
+            padding: 10px 20px;
+            border: 1px solid #1e4989;
+            border-radius: 10px;
+            margin: 20px 0px !important;
+            color: #ffffff;
+            display: inline-block;
+            text-decoration: none;
+        }
+    
+
+			.qr-code-container {
+			    display: flex;
+			    justify-content: center;
+			    flex-wrap: wrap;
+			    gap: 30px;
+			    margin-top: 20px;
+			}
+			
+			.qr-item {
+			    text-align: center;
+			    max-width: 200px;
+			}
+			
+			.qr-code-img {
+			    width: 100%;
+			    max-width: 175px;
+			    height: auto;
+			    object-fit: contain;
+			}
+			
+			.english {
+			    font-size: 18px;
+			    display: block;
+			    margin-top: 10px;
+			}
+			
+			.link-button {
+			    display: inline-block;
+			    margin-top: 8px;
+			    word-wrap: break-word;
+			    font-size: 16px;
+			    color: #007bff;
+			}
+			
+			@media (max-width: 600px) {
+			    .modal-body {
+			        padding: 15px;
+			    }
+			
+			    .qr-code-container {
+			        flex-direction: column;
+			        align-items: center;
+			    }
+			
+			    .qr-item {
+			        max-width: 90%;
+			    }
+			
+			    .link-button {
+			        font-size: 14px;
+			    }
+			}
+		
+
+.emblem-resize img {
+    width: auto;
+    height: 70px; 
+    margin-top: 11px;
+}	
+.footer_main
+{
+background-color: #1ca6ef;
+padding: 5px 0px 0px 0px;
+}
+.footer_main ul li a
+{
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    line-height: 25px;
+}
+
+.footer_main p
+{
+ color: #080707;
+    font-size: 10.5px;
+    letter-spacing: 0.2px;
+    padding: 0 0 0 16px;
+    font-style: italic;
+}
+.footer_chat_box
+{
+text-align: right;
+}
+.left {
+    left: 0;
+    background-color: inherit !important;
+}
+.right {
+    right: 0;
+    background-color: inherit !important;
+}
+.chatbutton {
+        width: 100px;
+        height: 100px;       
+    }
+
+     /* .chatbot {
+	text-align: center;
+}  */
+
+#pdfModal {
+	/* 	z-index: 10000; */
+	}
+
+
+@media ( min-width : 600px) {
+	/* For tablets & desktop: */
+	.chatbutton {
+		width: 100px;
+		height: 100px;
+	}
+	
+}
+@media only screen and (max-width: 600px) {
+	.footer_main p { 
+    padding: 0px 0px 0px 0px;      
+    }
+    .footer_main {
+    
+    text-align: center;
+}
+.footer_chat_box
+{
+text-align: center;
+}
+    }
+    @media only screen and (max-width: 768px) {
+     .footer_main {
+    text-align: center;
+}
+.footer_chat_box
+{
+text-align: center;
+}
+    }
+ 
+	.bhashini-note {
+    width: 100%;
+    border: 1px solid deepskyblue;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+   /*  font-size: 200px; */
+    padding: 1px;
+    text-align: center;
+
+    animation: glowBlink 1s infinite alternate;
+}
+
+
+@keyframes glowBlink {
+    0% {
+        background-color: yellow;
+        box-shadow: 0 0 5px deepskyblue;
+    }
+    100% {
+        background-color: #ffe6e6;
+        box-shadow: 0 0 20px deepskyblue, 0 0 40px deepskyblue;
+    }
+}  
