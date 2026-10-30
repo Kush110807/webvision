@@ -6,3 +6,6 @@
 @media(max-width:430px){.container{width:calc(100% - 34px)}.prototype-notice{font-size:10px;padding:8px 14px}.prototype-notice svg{display:none}.brand-wordmark{font-size:15px}.hero-content h1{font-size:clamp(38px,11vw,47px)}.hero-actions{gap:14px}.button-large{padding:15px 18px}.button-text{padding:7px 0}.hero-art{min-height:310px;transform:scale(.7);margin:-35px 0}.service-grid{grid-template-columns:1fr}.service-card{min-height:255px}.section-top h2,.how-header h2{font-size:31px}.service-section{padding:60px 0}.bottom-cta-section{padding:46px 0}.footer-content{gap:17px}}
 @media(max-width:330px){.hero-art{transform:scale(.58);min-height:270px;margin:-52px 0}.button-large{font-size:12px;gap:8px}.hero-intro{font-size:14px}.hero-content h1{font-size:36px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* The decorative badge obscures the preview checklist at mobile widths. */
+@media(max-width:720px){.art-floating-tag{display:none}}
