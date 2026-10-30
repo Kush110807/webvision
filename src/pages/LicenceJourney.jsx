@@ -1,3 +1,4 @@
+import DemoStateNotice from '../components/one/DemoStateNotice.jsx';
 import { useMemo, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
@@ -31,7 +32,7 @@ const TOTAL_ITEMS = CHECKLIST_CATEGORIES.reduce((sum, c) => sum + c.items.length
 // PAGE 4 — Smart Licence Journey: the main USP. 6 guided steps with save & resume.
 export default function LicenceJourney() {
   const navigate = useNavigate();
-  const { journey, setStep, toggleChecklist, setApplicant, startOver, resumeNotice, dismissResumeNotice } = useJourney();
+  const { journey, setStep, toggleChecklist, setApplicant, startOver, saveAvailable, resumeNotice, dismissResumeNotice } = useJourney();
   const [stepError, setStepError] = useState(null);
 
   const service = getServiceById(journey.serviceId) || getServiceById("learner's-licence");
@@ -87,7 +88,7 @@ export default function LicenceJourney() {
             </p>
           </div>
           <div className="so-journey-saved">
-            <BookmarkCheck size={15} aria-hidden="true" /> Saved automatically in this browser
+            <BookmarkCheck size={15} aria-hidden="true" /> {saveAvailable ? 'Saved automatically in this browser' : 'Progress is not saved — browser storage unavailable'}
           </div>
         </div>
 
@@ -96,6 +97,8 @@ export default function LicenceJourney() {
             We restored your saved journey from this browser. Pick up where you left off.
           </NoticeBanner>
         )}
+
+        <DemoStateNotice stateCode={journey.stateCode} />
 
         {/* Step indicator */}
         <ol className="so-stepper" aria-label="Journey steps">

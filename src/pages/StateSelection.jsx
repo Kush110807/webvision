@@ -61,13 +61,9 @@ export default function StateSelection() {
             <Link to="/" className="so-link-quiet">change</Link>
           </div>
 
-          <StateSearch value={code} onChange={(v) => { setCode(v); if (error) setError(null); }} />
+          <StateSearch errorTitle="Selection required" error={error} value={code} onChange={(v) => { setCode(v); if (error) setError(null); }} />
 
-          {error && (
-            <div className="so-mt-sm">
-              <NoticeBanner type="error" title="Selection required">{error}</NoticeBanner>
-            </div>
-          )}
+
 
           <div className="so-inline-actions so-mt">
             <button type="button" className="so-btn so-btn-primary" onClick={onContinue}>

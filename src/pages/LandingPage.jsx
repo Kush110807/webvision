@@ -55,8 +55,8 @@ export default function LandingPage() {
             </div>
             <h2 id="so-state-panel-title">Where will you apply?</h2>
             <p>Choose the state where you intend to access licence services.</p>
-            <StateSearch value={code} onChange={(v) => { setCode(v); setError(null); }} />
-            {error && <div className="so-mt-sm" role="alert"><NoticeBanner type="error" title="Select a state first">{error}</NoticeBanner></div>}
+            <StateSearch error={error} value={code} onChange={(v) => { setCode(v); setError(null); }} />
+
             <button type="button" className="so-btn so-btn-primary so-btn-lg so-landing-continue" onClick={onContinue}>
               Explore available services <ArrowRight size={19} aria-hidden="true" />
             </button>

@@ -1,3 +1,4 @@
+import { VEHICLE_CATEGORIES, AGE_BANDS } from '../data/learnerLicence.js';
 import { STATES } from '../data/states.js';
 // Small validation helpers used across SARATHI ONE pages.
 
@@ -8,15 +9,15 @@ export function validateStateSelection(stateCode) {
   return null;
 }
 
-export function validateApplicantDetails(applicant) {
+export function validateApplicantDetails(applicant = {}) {
   const errors = {};
-  if (!applicant.vehicleCategory) {
+  if (!VEHICLE_CATEGORIES.some((v) => v.id === applicant?.vehicleCategory)) {
     errors.vehicleCategory = 'Please choose the vehicle category you want the licence for.';
   }
-  if (!applicant.ageBand) {
+  if (!AGE_BANDS.some((a) => a.id === applicant?.ageBand)) {
     errors.ageBand = 'Please choose the age group that applies to you.';
   }
-  if (!applicant.confirmed) {
+  if (applicant?.confirmed !== true) {
     errors.confirmed = 'Please confirm that you will verify these requirements on the official portal.';
   }
   return errors;

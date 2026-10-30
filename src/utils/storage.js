@@ -7,20 +7,32 @@ import { getServiceById } from '../data/services.js';
 
 const KEY = 'sarathiOne.journey.v1';
 
+// Apply the same allowlist on both read and write, including in-memory updates.
+export function normalizeJourney(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return null;
+  const checklist = Object.fromEntries(CHECKLIST_CATEGORIES.flatMap((c) => c.items)
+    .map((item) => [item.id, data.checklist?.[item.id] === true]));
+  const applicant = {
+    vehicleCategory: VEHICLE_CATEGORIES.some((v) => v.id === data.applicant?.vehicleCategory) ? data.applicant.vehicleCategory : '',
+    ageBand: AGE_BANDS.some((a) => a.id === data.applicant?.ageBand) ? data.applicant.ageBand : '',
+    confirmed: data.applicant?.confirmed === true,
+  };
+  let step = Number.isInteger(data.step) && data.step >= 1 && data.step <= 6 ? data.step : 1;
+  const essentialsReady = CHECKLIST_CATEGORIES.flatMap((c) => c.items)
+    .filter((item) => item.essential).every((item) => checklist[item.id]);
+  if (step > 3 && !essentialsReady) step = 3;
+  if (step > 4 && (!applicant.vehicleCategory || !applicant.ageBand || !applicant.confirmed)) step = 4;
+  return {
+    serviceId: typeof data.serviceId === 'string' && getServiceById(data.serviceId) ? data.serviceId : null,
+    stateCode: STATES.some((state) => state.code === data.stateCode) ? data.stateCode : null,
+    step, checklist, applicant,
+  };
+}
+
 export function loadJourney() {
   try {
     const raw = window.localStorage.getItem(KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    if (!parsed || typeof parsed !== 'object') return null;
-    return {
-      serviceId: typeof parsed.serviceId === 'string' && Boolean(getServiceById(parsed.serviceId)) ? parsed.serviceId : null,
-      stateCode: STATES.some((state) => state.code === parsed.stateCode) ? parsed.stateCode : null,
-      step: Number.isInteger(parsed.step) && parsed.step >= 1 && parsed.step <= 6 ? parsed.step : 1,
-      checklist: Object.fromEntries(CHECKLIST_CATEGORIES.flatMap((c) => c.items).map((item) => [item.id, parsed.checklist?.[item.id] === true])),
-      applicant: { vehicleCategory: VEHICLE_CATEGORIES.some((v) => v.id === parsed.applicant?.vehicleCategory) ? parsed.applicant.vehicleCategory : '', ageBand: AGE_BANDS.some((a) => a.id === parsed.applicant?.ageBand) ? parsed.applicant.ageBand : '', confirmed: parsed.applicant?.confirmed === true },
-      updatedAt: typeof parsed.updatedAt === 'string' ? parsed.updatedAt : null,
-    };
+    return raw ? normalizeJourney(JSON.parse(raw)) : null;
   } catch (err) {
     console.warn('Could not read saved progress from localStorage.', err);
     return null;
@@ -29,8 +41,9 @@ export function loadJourney() {
 
 export function saveJourney(data) {
   try {
-    const payload = { ...data, updatedAt: new Date().toISOString() };
-    window.localStorage.setItem(KEY, JSON.stringify(payload));
+    const safe = normalizeJourney(data);
+    if (!safe) return false;
+    window.localStorage.setItem(KEY, JSON.stringify({ ...safe, updatedAt: new Date().toISOString() }));
     return true;
   } catch (err) {
     console.warn('Could not save progress to localStorage.', err);
