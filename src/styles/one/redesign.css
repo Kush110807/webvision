@@ -193,3 +193,24 @@
 @media(prefers-reduced-motion:reduce){
   .so-app *,.so-app *::before,.so-app *::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+/* V2: measured readability and compact, predictable journey navigation. */
+.so-app .so-state-panel-footnote,
+.so-app .so-landing-state-panel .so-state-panel-footnote{color:#52647d;font-size:12px}
+.so-app .so-fineprint,.so-app .so-status-meta,.so-app .so-check-hint{color:#52647d}
+.so-app .so-field-error{color:#9f2525;font-size:13px;line-height:1.5;margin:10px 0}
+.so-app .so-input[aria-invalid="true"]{border-color:#a32929}
+.so-app .so-state-list{position:relative;scroll-padding:8px}
+.so-app .so-state-empty{color:#52647d;line-height:1.5;padding:14px}
+.so-app .so-stepper{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.so-app .so-stepper-item{min-width:0}
+.so-app .so-stepper-item button{width:100%;padding:8px 4px}
+.so-app .so-check-item{line-height:1.5}
+.so-app .so-timeline-date{color:#52647d;font-size:12px}
+@media(max-width:780px){
+  .so-app .so-stepper{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .so-app .so-stepper-item{min-width:0}
+  .so-app .so-stepper-item button{min-height:76px}
+  .so-app .so-stepper-title{font-size:11px;line-height:1.35;overflow-wrap:anywhere}
+  .so-app .so-state-clear{width:36px;height:36px}
+}

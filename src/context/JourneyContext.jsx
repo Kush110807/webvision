@@ -17,9 +17,11 @@ export function JourneyProvider({ children }) {
   const [journey, setJourney] = useState(() => ({ ...EMPTY, ...(loadJourney() || {}) }));
   const [resumeNotice, setResumeNotice] = useState(() => (loadJourney() ? 'restored' : null));
 
+  const [saveAvailable, setSaveAvailable] = useState(true);
+
   // Auto-save on every change (this is the "Save & Resume" feature).
   useEffect(() => {
-    saveJourney(journey);
+    setSaveAvailable(saveJourney(journey));
   }, [journey]);
 
   const update = useCallback((patch) => {
@@ -52,6 +54,7 @@ export function JourneyProvider({ children }) {
   const value = useMemo(
     () => ({
       journey,
+      saveAvailable,
       update,
       setService,
       setStateCode,
@@ -62,7 +65,7 @@ export function JourneyProvider({ children }) {
       resumeNotice,
       dismissResumeNotice,
     }),
-    [journey, update, setService, setStateCode, setStep, toggleChecklist, setApplicant, startOver, resumeNotice, dismissResumeNotice]
+    [journey, saveAvailable, update, setService, setStateCode, setStep, toggleChecklist, setApplicant, startOver, resumeNotice, dismissResumeNotice]
   );
 
   return <JourneyContext.Provider value={value}>{children}</JourneyContext.Provider>;

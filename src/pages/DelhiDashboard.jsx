@@ -1,3 +1,4 @@
+import DemoStateNotice from '../components/one/DemoStateNotice.jsx';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -72,6 +73,8 @@ export default function DelhiDashboard() {
             </div>
           </NoticeBanner>
         )}
+
+        <DemoStateNotice stateCode={journey.stateCode} />
 
         {/* Dashboard heading */}
         <section className="so-dash-head">

@@ -1,14 +1,16 @@
-import { useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Search, X } from 'lucide-react';
 import { STATES } from '../../data/states.js';
 
 // Searchable state/UT picker: type to filter, click to select, clear to reset.
-export default function StateSearch({ value, onChange }) {
+export default function StateSearch({ value, onChange, error, errorTitle = 'Select a state first' }) {
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const id = useId();
   const [active, setActive] = useState(0);
   const inputRef = useRef(null);
+
+  const listRef = useRef(null);
 
   const selected = STATES.find((s) => s.code === value) || null;
 
@@ -19,6 +21,16 @@ export default function StateSearch({ value, onChange }) {
       (s) => s.name.toLowerCase().includes(q) || s.code.toLowerCase().includes(q)
     );
   }, [query]);
+
+  useEffect(() => {
+    const list = listRef.current;
+    const option = list?.querySelector(`[data-index="${active}"]`);
+    if (!list || !option) return;
+    if (option.offsetTop < list.scrollTop) list.scrollTop = option.offsetTop;
+    else if (option.offsetTop + option.offsetHeight > list.scrollTop + list.clientHeight) {
+      list.scrollTop = option.offsetTop + option.offsetHeight - list.clientHeight;
+    }
+  }, [active, open]);
 
   const pick = (code) => {
     onChange(code);
@@ -68,6 +80,8 @@ export default function StateSearch({ value, onChange }) {
 
           }}
           aria-expanded={open}
+          aria-invalid={Boolean(error)}
+          aria-describedby={error ? `${id}-error` : undefined}
           role="combobox"
           aria-autocomplete="list"
           aria-activedescendant={open && results[active] ? `${id}-${results[active].code}` : undefined}
@@ -82,12 +96,12 @@ export default function StateSearch({ value, onChange }) {
       </div>
 
       {open && (
-        <ul id={`${id}-list`} className="so-state-list" role="listbox" aria-label="States and Union Territories">
+        <ul ref={listRef} id={`${id}-list`} className="so-state-list" role="listbox" aria-label="States and Union Territories">
           {results.length === 0 && (
-            <li className="so-state-empty">No state or Union Territory matches “{query}”. Try another spelling.</li>
+            <li role="presentation" className="so-state-empty">No state or Union Territory matches “{query}”. Try another spelling.</li>
           )}
           {results.map((s, index) => (
-            <li key={s.code} id={`${id}-${s.code}`} role="option" aria-selected={s.code === value}>
+            <li data-index={index} key={s.code} id={`${id}-${s.code}`} role="option" aria-selected={s.code === value}>
               <button
                 type="button"
                 tabIndex={-1}
@@ -103,6 +117,8 @@ export default function StateSearch({ value, onChange }) {
           ))}
         </ul>
       )}
+
+      {error && <p id={`${id}-error`} className="so-field-error" role="alert"><strong>{errorTitle}</strong><br />{error}</p>}
 
       {selected && (
         <div className="so-selected-state" role="status">
