@@ -7,7 +7,7 @@ This project is a local React/Vite redesign of the publicly accessible SARATHI e
 1. Open the folder containing `package.json` in VS Code.
 2. In VS Code Terminal (PowerShell), run `npm.cmd install`.
 3. Run `npm.cmd run dev` and open the printed local URL (normally http://localhost:5173/).
-4. Run `npm.cmd run build` before submission. The build must succeed on your machine; it was not possible to complete dependency installation in the review environment.
+4. Run `npm.cmd run build` before submission. Codex's final release build passed; run it again on the presenting machine after pulling the final source.
 
 ## Present features
 
@@ -26,7 +26,15 @@ This project is a local React/Vite redesign of the publicly accessible SARATHI e
 
 ## Redesigned files
 
-See `REDESIGN_HANDOFF.md`. Existing journey, context, storage, dashboard, status routes and the `/original` React page were not modified in this pass.
+See `REDESIGN_HANDOFF.md` for the initial UI changes and `CODEX_RELEASE_HANDOFF.md` for later functional repairs, exact files changed and verification evidence. The `/original` recreation was preserved.
+
+## Final verification and known limitations
+
+- Final release build: PASS (recorded by Codex; see `release-evidence/final-build.log`).
+- Automated browser checks: 42 PASS, 0 FAIL, across the recorded routes and selected functional/responsive cases; see `release-evidence/`.
+- This does not establish full accessibility, security or exhaustive browser compatibility.
+- `npm audit` reported five unresolved dependency vulnerabilities (one high, four moderate); legacy styling and missing-asset warnings also remain. Do not expose the development server publicly.
+- The app is an unofficial educational prototype using simulated status data; it cannot perform government transactions.
 
 ## Public reference
 
